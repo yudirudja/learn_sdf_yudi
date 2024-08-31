@@ -5,5 +5,22 @@ jobs:
     sdf-validate:
         runs-on: ubuntu-latest
         steps:
-            - name: Check out repo code
+            - name: Check out repository code
               uses: actions/checkout@v3
+
+            - name: Install Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 'lts/*'
+
+            - name: Install JDK
+              uses: actions/setup-java@v3
+              with:
+                java-version: '17'
+                distribution: 'oracle'
+
+            - name: Install Package
+              run: npm ci --acceptsuitecloudsdklicense
+
+            - name: Run Unit Test
+              run: npm test
