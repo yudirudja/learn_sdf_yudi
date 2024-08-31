@@ -23,8 +23,5 @@ jobs:
             - name: Run Unit Test
               run: npm test
 
-            - name: set node_modules/bin path
-              run: echo "PATH=$(npm bin):$PATH >> $GITHUB_ENV"
-
             - name: Authenticate Project againts ${{vars.NS_ACCOUNT_ID}}
-              run: suitecloud account:savetoken --account ${{vars.NS_ACCOUNT_ID}} --authid ${{vars.NS_ACCOUNT_ID}} --tokenid ${{vars.NS_TOKEN_ID}} --tokensecret ${{vars.NS_TOKEN_SECRET}}
+              run: ./node_modules/.bin/suitecloud account:savetoken --account ${{vars.NS_ACCOUNT_ID}} --authid ${{vars.NS_ACCOUNT_ID}} --tokenid ${{vars.NS_TOKEN_ID}} --tokensecret ${{vars.NS_TOKEN_SECRET}}
