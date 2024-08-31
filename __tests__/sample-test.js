@@ -1,5 +1,3 @@
-import Suitelet from "SuiteScripts/Suitelet";
-
 import record from 'N/record';
 import Record from 'N/record/instance';
 

@@ -1,0 +1,9 @@
+name: SDF Validation
+run-name: validate
+on: [push]
+jobs:
+    sdf-validate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo code
+              uses: actions/checkout@v3
