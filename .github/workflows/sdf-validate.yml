@@ -21,6 +21,9 @@ jobs:
                 distribution: 'oracle'
 
             - name: Run Unit Test
+              run: npm install
+
+            - name: Run Unit Test
               run: npm test
 
             - name: Authenticate Project againts ${{vars.NS_ACCOUNT_ID}}
