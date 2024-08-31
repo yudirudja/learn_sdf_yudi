@@ -21,7 +21,7 @@ jobs:
                 distribution: 'oracle'
 
             - name: Run Unit Test
-              run: npm install
+              run: npm ci --acceptsuitecloudsdklicense
 
             - name: Run Unit Test
               run: npm test
