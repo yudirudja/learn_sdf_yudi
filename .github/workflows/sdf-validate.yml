@@ -30,5 +30,8 @@ jobs:
             - name: Authenticate Project againts ${{vars.NS_ACCOUNT_ID}}
               run: ./node_modules/.bin/suitecloud account:savetoken --account ${{vars.NS_ACCOUNT_ID}} --authid ${{vars.NS_ACCOUNT_ID}} --tokenid ${{secrets.NS_TOKEN_ID}} --tokensecret ${{secrets.NS_TOKEN_SECRET}}
 
-            - name: Run Unit Test
+            - name: Run Validate
               run: npm run validate
+
+            - name: Run Deploy
+              run: npm run deploy
